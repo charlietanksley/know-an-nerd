@@ -11,8 +11,12 @@ $yellow: #E8DE67;
 $white: #FFEFC3;
 $green: #C0CCAB;
 
+/* I was told this font would work on the iPhone http://iosfonts.com/ */
 $headline-font: 'Avenir-Black';
 $body-font: 'Avenir-Book';
+
+/* Scale:
+  /* http://modularscale.com/scale/?px1=18&px2=320&ra1=1.778&ra2=0 */
 
 body {
   background: $white;
@@ -35,13 +39,13 @@ header {
 
   #tagline {
     color: $brown;
-    font-size: 3em;
+    font-size: 3.161em;
     text-align: right;
   }
 }
 
 #nerd-list {
-  padding-top: 50px;
+  padding-top: 3.163px;
 
   img.nerd-photo {
     width: 75%;
@@ -51,14 +55,14 @@ header {
 
   p.nerd {
     font-size: 4em;
-    padding: 0.5em 1em 1em 1em;
+    padding: 0.563em 1em 1em 1em;
     text-align: center;
   }
 
   ul {
     li {
       list-style-type: none;
-      margin-bottom: 50px;
+      margin-bottom: 3.163em;
     }
   }
 }
