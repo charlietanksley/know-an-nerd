@@ -14,16 +14,25 @@
 </head>
 
 <body id="home">
-
-    <h1>Know an nerd</h1>
+  <article id='main'>
+    <header>
+      <h1 id='title'>Know an nerd</h1>
+      <p id='tagline'>what even is an nerd</p>
+    </header>
 
     <section id='nerd-list'>
       <ul>
       {:nerds}
-        <li><img src='{image}' alt='{name}' />{name}</li>
+        <li>
+          <img class='nerd-photo' src='{image}' alt='{name}' />
+          <p class='nerd'>
+            {name}
+          </p>
+        </li>
       {/nerds}
       </ul>
     </section>
+  </article>
 
     <script src='./js/ender.js' type='text/javascript'></script>
     <script src='./js/app.js' type='text/javascript'></script>

@@ -68,3 +68,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* colorscheme: https://kuler.adobe.com/#create/fromacolor */
+/* line 17, ../sass/screen.scss */
+body {
+  background: #ffefc3;
+  color: #4c2b2f;
+  font-size: 18px;
+  font-family: "Avenir-Book";
+}
+
+/* line 24, ../sass/screen.scss */
+#main {
+  padding: 1%;
+}
+
+/* line 29, ../sass/screen.scss */
+header #title {
+  color: #e57152;
+  font-family: "Avenir-Black";
+  font-size: 8em;
+  text-align: center;
+}
+/* line 36, ../sass/screen.scss */
+header #tagline {
+  color: #4c2b2f;
+  font-size: 3em;
+  text-align: right;
+}
+
+/* line 43, ../sass/screen.scss */
+#nerd-list {
+  padding-top: 50px;
+}
+/* line 46, ../sass/screen.scss */
+#nerd-list img.nerd-photo {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 52, ../sass/screen.scss */
+#nerd-list p.nerd {
+  font-size: 4em;
+  padding: 0.5em 1em 1em 1em;
+  text-align: center;
+}
+/* line 59, ../sass/screen.scss */
+#nerd-list ul li {
+  list-style-type: none;
+  margin-bottom: 50px;
+}

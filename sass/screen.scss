@@ -11,3 +11,54 @@ $yellow: #E8DE67;
 $white: #FFEFC3;
 $green: #C0CCAB;
 
+$headline-font: 'Avenir-Black';
+$body-font: 'Avenir-Book';
+
+body {
+  background: $white;
+  color: $brown;
+  font-size: 18px;
+  font-family: $body-font;
+}
+
+#main {
+  padding: 1%;
+}
+
+header {
+  #title {
+    color: $orange;
+    font-family: $headline-font;
+    font-size: 8em;
+    text-align: center;
+  }
+
+  #tagline {
+    color: $brown;
+    font-size: 3em;
+    text-align: right;
+  }
+}
+
+#nerd-list {
+  padding-top: 50px;
+
+  img.nerd-photo {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  p.nerd {
+    font-size: 4em;
+    padding: 0.5em 1em 1em 1em;
+    text-align: center;
+  }
+
+  ul {
+    li {
+      list-style-type: none;
+      margin-bottom: 50px;
+    }
+  }
+}
