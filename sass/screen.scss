@@ -46,6 +46,29 @@ header {
   }
 }
 
+nav {
+  margin-top: 1em;
+  font-size: 5.621em;
+  ul {
+    li {
+      list-style-type: none;
+      margin-bottom: 1em;
+    }
+  }
+
+  a {
+    background: $green;
+    color: $brown;
+    display: block;
+    text-align: center;
+    right: auto;
+    margin-left: 12.5%;
+    width: 55%;
+    padding: 1em;
+    text-decoration: none;
+  }
+}
+
 #nerd-list {
   padding-top: 3.163px;
 
