@@ -90,10 +90,14 @@ $.domReady(function(){
   };
 
   $('#show-nerd-list').on("click", function() {
+    showList();
+  });
+
+  function showList() {
     $list = $('#nerd-list');
     $list.toggleClass('hidden');
     render($list, {'nerds':nerds});
-  });
+  };
 
   $('#show-multiple-choice-quiz').on("click", function() {
     $quiz = $('#multiple-choice');
