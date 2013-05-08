@@ -103,4 +103,9 @@ $.domReady(function(){
     $quiz = $('#multiple-choice');
     $quiz.toggleClass('hidden');
   });
+
+  // Experiment!
+  $.('#home').poke({
+    'E': showList();
+  });
 });
