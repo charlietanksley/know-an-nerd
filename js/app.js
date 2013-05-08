@@ -90,19 +90,29 @@ $.domReady(function(){
   };
 
   $('#show-nerd-list').on("click", function() {
-    showList();
+    Views.showList();
   });
 
-  function showList() {
-    $list = $('#nerd-list');
-    $list.toggleClass('hidden');
-    render($list, {'nerds':nerds});
-  };
 
   $('#show-multiple-choice-quiz').on("click", function() {
-    $quiz = $('#multiple-choice');
-    $quiz.toggleClass('hidden');
+    Views.showQuiz();
   });
+
+
+  var Views = {
+    showList: function() {
+      $list = $('#nerd-list');
+      $list.toggleClass('hidden');
+      render($list, {'nerds':nerds});
+    },
+
+    showQuiz: function() {
+      $quiz = $('#multiple-choice');
+      $quiz.toggleClass('hidden');
+    }
+  };
+
+
 
   // Experiment!
   $('#home').poke({
