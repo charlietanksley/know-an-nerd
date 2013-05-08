@@ -89,5 +89,14 @@ $.domReady(function(){
     element.html(element.render(data));
   };
 
-  render($('#nerd-list'), {'nerds':nerds});
+  $('#show-nerd-list').on("click", function() {
+    $list = $('#nerd-list');
+    $list.toggleClass('hidden');
+    render($list, {'nerds':nerds});
+  });
+
+  $('#show-multiple-choice-quiz').on("click", function() {
+    $quiz = $('#multiple-choice');
+    $quiz.toggleClass('hidden');
+  });
 });

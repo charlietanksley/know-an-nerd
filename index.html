@@ -20,7 +20,14 @@
       <p id='tagline'>what even is an nerd</p>
     </header>
 
-    <section id='nerd-list'>
+    <nav id='button-nav'>
+      <ul>
+        <li><a href='#' id='show-nerd-list'>All nerds</a></li>
+        <li><a href='#' id='show-multiple-choice-quiz'>Easy quiz</a></li>
+      </ul>
+    </nav>
+
+    <section id='nerd-list' class='hidden'>
       <ul>
       {:nerds}
         <li>
@@ -32,6 +39,11 @@
       {/nerds}
       </ul>
     </section>
+
+    <section id='multiple-choice' class='hidden'>
+      <p>Coming soon!</p>
+    </section>
+
   </article>
 
     <script src='./js/ender.js' type='text/javascript'></script>
