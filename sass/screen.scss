@@ -48,24 +48,23 @@ header {
 
 nav {
   margin-top: 1em;
-  font-size: 5.621em;
-  ul {
-    li {
-      list-style-type: none;
-      margin-bottom: 1em;
-    }
-  }
 
-  a {
+  button {
     background: $green;
+    border: none;
     color: $brown;
     display: block;
-    text-align: center;
-    right: auto;
-    margin-left: 12.5%;
-    width: 55%;
+    float: left;
+    font-size: 5.621em;
+    margin-bottom: 1em;
     padding: 1em;
-    text-decoration: none;
+    text-align: center;
+    width: 50%;
+
+  }
+
+  button#show-nerd-list {
+    border-right: 1px solid $white;
   }
 }
 
