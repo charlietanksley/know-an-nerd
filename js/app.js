@@ -115,14 +115,3 @@ $.domReady(function(){
     }
   });
 });
-
-function page2() {
-  alert("boom");
-  console.log("I did it!");
-};
-
-$.route.add({
-  'another-route': page2
-});
-
-$.route.run(document.location.pathname);
