@@ -101,9 +101,7 @@ $.domReady(function(){
   var Question = function(theNerds) {
     this.answer = rara.randomMember(theNerds);
     this.options = rara.insertRandomly(this.answer,
-                                               [rara.randomMember(theNerds),
-                                                rara.randomMember(theNerds),
-                                                rara.randomMember(theNerds)])
+                                       rara.randomSubset(theNerds, 3));
   };
 
   var Views = {
@@ -147,6 +145,19 @@ var Rara = function() {
 
   this.randomMember = function(array) {
     return array[this.randomIndex(array)];
+  };
+
+  // It would be nice if this returned a unique subset if possible
+  this.randomSubset = function(array, count) {
+    var i,
+    result;
+
+    result = [];
+    for (i=0; i < count; i++) {
+      result.push(this.randomMember(array));
+    };
+
+    return result;
   };
 };
 
