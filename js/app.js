@@ -94,10 +94,17 @@ $.domReady(function(){
   });
 
 
-  $('#show-multiple-choice-quiz').on("click", function() {
+  $('#show-quiz').on("click", function() {
     Views.showQuiz();
   });
 
+  var Question = function(theNerds) {
+    this.answer = rara.randomMember(theNerds);
+    this.options = rara.insertRandomly(this.answer,
+                                               [rara.randomMember(theNerds),
+                                                rara.randomMember(theNerds),
+                                                rara.randomMember(theNerds)])
+  };
 
   var Views = {
     showList: function() {
@@ -107,12 +114,13 @@ $.domReady(function(){
     },
 
     showQuiz: function() {
+      var question = new Question(nerds);
+
       $quiz = $('#multiple-choice');
       $quiz.toggleClass('hidden');
+      render($quiz, {'image':question.answer.image, 'options':question.options});
     }
   };
-
-
 
   // Experiment!
   $('#home').poke({
@@ -125,3 +133,21 @@ $.domReady(function(){
     }
   });
 });
+
+// Random Array methods
+var Rara = function() {
+  this.randomIndex = function(array) {
+    return Math.floor((Math.random() * array.length));
+  };
+
+  this.insertRandomly = function(item, array) {
+    array.splice(Math.floor((Math.random() * array.length)), 0, item);
+    return array;
+  };
+
+  this.randomMember = function(array) {
+    return array[this.randomIndex(array)];
+  };
+};
+
+var rara = new Rara();
