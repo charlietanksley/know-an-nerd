@@ -99,9 +99,8 @@ $.domReady(function(){
   });
 
   var Question = function(theNerds) {
-    this.answer = rara.randomMember(theNerds);
-    this.options = rara.insertRandomly(this.answer,
-                                       rara.randomSubset(theNerds, 3));
+    this.options = rara.randomSubset(theNerds, 4);
+    this.answer = rara.randomMember(this.options);
   };
 
   var Views = {
