@@ -88,12 +88,36 @@ $.domReady(function(){
 
   $('#show-nerd-list').on("click", function() {
     Views.showList();
+    makeNerdList();
   });
 
 
   $('#show-quiz').on("click", function() {
     renderNewQuiz();
+    makeNerdQuiz();
   });
+
+  function makeNerdList() {
+    var $data = $('#data');
+    if ($data.hasClass('nerd-quiz')) {
+      $data.removeClass('nerd-quiz');
+    }
+
+    if (!$data.hasClass('nerd-list')) {
+      $data.addClass('nerd-list');
+    }
+  };
+
+  function makeNerdQuiz() {
+    var $data = $('#data');
+    if ($data.hasClass('nerd-list')) {
+      $data.removeClass('nerd-list');
+    }
+
+    if (!$data.hasClass('nerd-quiz')) {
+      $data.addClass('nerd-quiz');
+    }
+  };
 
   function renderNewQuiz() {
     var question,
