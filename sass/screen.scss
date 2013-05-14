@@ -46,6 +46,28 @@ header {
   }
 }
 
+nav {
+  margin-top: 1em;
+
+  button {
+    background: $green;
+    border: none;
+    color: $brown;
+    display: block;
+    float: left;
+    font-size: 5.621em;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: center;
+    width: 50%;
+
+  }
+
+  button#show-nerd-list {
+    border-right: 1px solid $white;
+  }
+}
+
 #nerd-list {
   padding-top: 3.163px;
 
@@ -71,4 +93,8 @@ header {
 
 .hidden {
   display: none;
+}
+
+.white {
+  background: white;
 }

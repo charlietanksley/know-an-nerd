@@ -82,12 +82,90 @@ $.domReady(function(){
                {'image': 'http://www.bignerdranch.com/images/headshots-white-bg/tomer-elmalem.jpg', 'name': 'Tomer Elmalem'},
                {'image': 'http://www.bignerdranch.com/images/headshots-white-bg/zac-stewart.jpg', 'name': 'Zac Stewart'}]
 
-  // For some reason we Wings is being really pesky and forcing me to
-  // render the template and *then* insert it into the dom.  This
-  // function just makes that simpler.
   var render = function(element, data) {
-    element.html(element.render(data));
+    $('#data').html(element.render(data));
   };
 
-  render($('#nerd-list'), {'nerds':nerds});
+  $('#show-nerd-list').on("click", function() {
+    Views.showList();
+  });
+
+
+  $('#show-quiz').on("click", function() {
+    renderNewQuiz();
+  });
+
+  function renderNewQuiz() {
+    var question,
+    quiz,
+    quizData;
+
+    question = new Question(nerds);
+
+    quizData = {
+      'image':question.answer.image,
+      'options':question.options};
+
+    Views.showQuiz(quizData);
+
+    quiz = new Quiz(question);
+    quiz.run();
+  };
+
+  var Views = {
+    showList: function() {
+      $list = $('#nerd-list');
+      render($list, {'nerds':nerds});
+    },
+
+    showQuiz: function(quiz) {
+      $quiz = $('#multiple-choice');
+      render($quiz, quiz);
+    }
+  };
+
+  var Question = function(theNerds) {
+    this.options = rara.randomSubset(theNerds, 4);
+    this.answer = rara.randomMember(this.options);
+
+    this.check = function(answer) {
+      return answer == this.answer.name;
+    };
+  };
+
+  var Quiz = function(question) {
+    this.run = function() {
+      var result,
+      newQuestion,
+      $result;
+
+      $('.answer').on("click", function(e) {
+        answer = e.currentTarget.innerHTML;
+        if (question.check(answer)) {
+          result = "Success!";
+        } else {
+          result = "Learn a nerd!";
+        };
+
+        $result = $('#guess-result');
+        $result.html(result);
+        $result.append("<button class='new-quiz'>Try again</button>");
+
+        $('.new-quiz').on("click", function() {
+          renderNewQuiz();
+        });
+      });
+    }
+  };
+
+  // Experiment!
+  $('#home').poke({
+    'E': function() {
+      $('#home').toggleClass('white');
+    },
+
+    'W': function() {
+      showList();
+    }
+  });
 });
