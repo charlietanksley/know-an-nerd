@@ -83,7 +83,7 @@ $.domReady(function(){
                {'image': 'http://www.bignerdranch.com/images/headshots-white-bg/zac-stewart.jpg', 'name': 'Zac Stewart'}]
 
   var render = function(element, data) {
-    $('#main').html(element.render(data));
+    $('#data').html(element.render(data));
   };
 
   $('#show-nerd-list').on("click", function() {
