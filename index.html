@@ -44,15 +44,19 @@
       <img class='nerd-photo' src='{image}' alt='guess this nerd!' />
       <ul>
         {:options}
-          <li>{name}</li>
+          <li>
+            <button class='answer' data-name={name}>{name}</button>
+          </li>
         {/options}
       </ul>
+      <p id='guess-result'></p>
     </section>
 
   </article>
 
     <script src='./js/ender.js' type='text/javascript'></script>
     <script src='./js/rara.js' type='text/javascript'></script>
+    <script src='./js/quiz.js' type='text/javascript'></script>
     <script src='./js/app.js' type='text/javascript'></script>
 </body>
 </html>

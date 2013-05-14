@@ -95,12 +95,24 @@ $.domReady(function(){
 
 
   $('#show-quiz').on("click", function() {
-    Views.showQuiz();
+    renderNewQuiz();
   });
 
-  var Question = function(theNerds) {
-    this.options = rara.randomSubset(theNerds, 4);
-    this.answer = rara.randomMember(this.options);
+  function renderNewQuiz() {
+    var question,
+    quiz,
+    quizData;
+
+    question = new Question(nerds);
+
+    quizData = {
+      'image':question.answer.image,
+      'options':question.options};
+
+    Views.showQuiz(quizData);
+
+    quiz = new Quiz(question);
+    quiz.run();
   };
 
   var Views = {
@@ -110,14 +122,13 @@ $.domReady(function(){
       render($list, {'nerds':nerds});
     },
 
-    showQuiz: function() {
-      var question = new Question(nerds);
-
+    showQuiz: function(quiz) {
       $quiz = $('#multiple-choice');
-      $quiz.toggleClass('hidden');
-      render($quiz, {'image':question.answer.image, 'options':question.options});
+      $quiz.removeClass('hidden');
+      render($quiz, quiz);
     }
   };
+
 
   // Experiment!
   $('#home').poke({
