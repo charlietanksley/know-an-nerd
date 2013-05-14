@@ -91,6 +91,47 @@ nav {
   }
 }
 
+.nerd-quiz {
+  padding-top: 3.163px;
+
+  button.new-quiz {
+    background: $orange;
+    display: block;
+    width: 99%;
+    font-size: 1em;
+  }
+
+  button.answer {
+    background: $green;
+    font-size: 2em;
+    height: 3em;
+    margin-bottom: 0.563em;
+    width: 100%;
+  }
+
+  img {
+    padding-top: 1em;
+    width: 100%;
+  }
+
+  #result {
+    color: $orange;
+    font-family: $headline-font;
+    font-size: 5.624em;
+    text-align: center;
+  }
+
+  .guess-this-nerd {
+    width: 48%;
+    float: left;
+  }
+
+  .which-nerd-is-it {
+    width: 48%;
+    float: left;
+  }
+}
+
 .hidden {
   display: none;
 }
