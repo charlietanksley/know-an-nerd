@@ -95,10 +95,6 @@ $.domReady(function(){
     renderNewQuiz();
   });
 
-  $('.new-quiz').on("click", function() {
-    renderNewQuiz();
-  });
-
   function renderNewQuiz() {
     var question,
     quiz,
@@ -154,6 +150,10 @@ $.domReady(function(){
         $result = $('#guess-result');
         $result.html(result);
         $result.append("<button class='new-quiz'>Try again</button>");
+
+        $('.new-quiz').on("click", function() {
+          renderNewQuiz();
+        });
       });
     }
   };
