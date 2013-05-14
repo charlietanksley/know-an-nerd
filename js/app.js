@@ -140,13 +140,21 @@ $.domReady(function(){
 
   var Quiz = function(question) {
     this.run = function() {
+      var result,
+      newQuestion,
+      $result;
+
       $('.answer').on("click", function(e) {
         answer = e.currentTarget.innerHTML;
         if (question.check(answer)) {
-          $('#guess-result').html("Success!")
+          result = "Success!";
         } else {
-          $('#guess-result').html("Learn a nerd!")
+          result = "Learn a nerd!";
         };
+
+        $result = $('#guess-result');
+        $result.html(result);
+        $result.append("<button class='new-quiz'>Try again</button>");
       });
     }
   };
