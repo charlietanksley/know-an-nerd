@@ -14,7 +14,7 @@
 </head>
 
 <body id="home">
-  <article id='main'>
+  <article>
     <header>
       <h1 id='title'>Know an nerd</h1>
       <p id='tagline'>what even is an nerd</p>
@@ -27,29 +27,31 @@
 
     <section id='main'></section>
 
-    <section id='nerd-list' class='hidden'>
-      <ul>
-      {:nerds}
-        <li>
-          <img class='nerd-photo' src='{image}' alt='{name}' />
-          <p class='nerd'>
-            {name}
-          </p>
-        </li>
-      {/nerds}
-      </ul>
-    </section>
+    <section id='templates' class='hidden'>
+      <section id='nerd-list'>
+        <ul>
+          {:nerds}
+          <li>
+            <img class='nerd-photo' src='{image}' alt='{name}' />
+            <p class='nerd'>
+              {name}
+            </p>
+          </li>
+          {/nerds}
+        </ul>
+      </section>
 
-    <section id='multiple-choice' class='hidden'>
-      <img class='nerd-photo' src='{image}' alt='guess this nerd!' />
-      <ul>
-        {:options}
+      <section id='multiple-choice'>
+        <img class='nerd-photo' src='{image}' alt='guess this nerd!' />
+        <ul>
+          {:options}
           <li>
             <button class='answer' data-name={name}>{name}</button>
           </li>
-        {/options}
-      </ul>
-      <p id='guess-result'></p>
+          {/options}
+        </ul>
+        <p id='guess-result'></p>
+      </section>
     </section>
 
   </article>
