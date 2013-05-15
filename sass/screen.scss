@@ -91,16 +91,25 @@ nav {
   }
 }
 
+#guess-result {
+  color: $orange;
+  font-family: $headline-font;
+  font-size: 5.624em;
+  text-align: center;
+}
+
+button.new-quiz {
+  background: $orange;
+  display: block;
+  width: 99%;
+  font-size: 1em;
+}
+
+#next-question {
+  font-size: 5.624em;
+}
+
 .nerd-quiz {
-  padding-top: 3.163px;
-
-  button.new-quiz {
-    background: $orange;
-    display: block;
-    width: 99%;
-    font-size: 1em;
-  }
-
   button.answer {
     background: $green;
     font-size: 2em;
@@ -112,13 +121,6 @@ nav {
   img {
     padding-top: 1em;
     width: 100%;
-  }
-
-  #result {
-    color: $orange;
-    font-family: $headline-font;
-    font-size: 5.624em;
-    text-align: center;
   }
 
   .guess-this-nerd {
