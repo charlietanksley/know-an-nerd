@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Know an nerd</title>
+    <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+</head>
+
+<body id="home">
+  <article id='main'>
+    <header>
+      <h1 id='title'>Know an nerd</h1>
+      <p id='tagline'>what even is an nerd</p>
+    </header>
+
+    <nav id='button-nav'>
+      <button id='show-nerd-list'>Nerds</button>
+      <button id='show-quiz'>Quiz</button>
+    </nav>
+
+    <section id='data'></section>
+
+    <section id='templates' class='hidden'>
+      <section id='nerd-list'>
+        <ul>
+          {:nerds}
+          <li>
+            <img class='nerd-photo' src='{image}' alt='{name}' />
+            <p class='nerd'>
+              {name}
+            </p>
+          </li>
+          {/nerds}
+        </ul>
+      </section>
+
+      <section id='multiple-choice'>
+        <div id='result'>
+          <p id='guess-result'></p>
+        </div>
+        <div class='guess-this-nerd'>
+          <img class='nerd-photo' src='{image}' alt='guess this nerd!' />
+        </div>
+
+        <div class='which-nerd-is-it'>
+          <ul>
+            {:options}
+            <li>
+              <button class='answer' data-name={name}>{name}</button>
+            </li>
+            {/options}
+          </ul>
+        </div>
+      </section>
+    </section>
+
+  </article>
+
+  <script src='js/ender.js' type='text/javascript'></script>
+  <script src='js/rara.js' type='text/javascript'></script>
+  <script src='js/app.js' type='text/javascript'></script>
+</body>
+</html>

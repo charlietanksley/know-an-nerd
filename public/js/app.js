@@ -82,36 +82,105 @@ $.domReady(function(){
                {'image': 'http://www.bignerdranch.com/images/headshots-white-bg/tomer-elmalem.jpg', 'name': 'Tomer Elmalem'},
                {'image': 'http://www.bignerdranch.com/images/headshots-white-bg/zac-stewart.jpg', 'name': 'Zac Stewart'}]
 
-  // For some reason we Wings is being really pesky and forcing me to
-  // render the template and *then* insert it into the dom.  This
-  // function just makes that simpler.
   var render = function(element, data) {
-    element.html(element.render(data));
+    $('#data').html(element.render(data));
   };
 
   $('#show-nerd-list').on("click", function() {
-    showList();
+    Views.showList();
+    makeNerdList();
   });
 
-  function showList() {
-    $list = $('#nerd-list');
-    $list.toggleClass('hidden');
-    render($list, {'nerds':nerds});
+
+  $('#show-quiz').on("click", function() {
+    renderNewQuiz();
+    makeNerdQuiz();
+  });
+
+  function makeNerdList() {
+    var $data = $('#data');
+    if ($data.hasClass('nerd-quiz')) {
+      $data.removeClass('nerd-quiz');
+    }
+
+    if (!$data.hasClass('nerd-list')) {
+      $data.addClass('nerd-list');
+    }
   };
 
-  $('#show-multiple-choice-quiz').on("click", function() {
-    $quiz = $('#multiple-choice');
-    $quiz.toggleClass('hidden');
-  });
+  function makeNerdQuiz() {
+    var $data = $('#data');
+    if ($data.hasClass('nerd-list')) {
+      $data.removeClass('nerd-list');
+    }
 
-  // Experiment!
-  $('#home').poke({
-    'E': function() {
-      $('#home').toggleClass('white');
+    if (!$data.hasClass('nerd-quiz')) {
+      $data.addClass('nerd-quiz');
+    }
+  };
+
+  function renderNewQuiz() {
+    var question,
+    quiz,
+    quizData;
+
+    question = new Question(nerds);
+
+    quizData = {
+      'image':question.answer.image,
+      'options':question.options};
+
+    Views.showQuiz(quizData);
+
+    quiz = new Quiz(question);
+    quiz.run();
+  };
+
+  var Views = {
+    showList: function() {
+      $list = $('#nerd-list');
+      render($list, {'nerds':nerds});
     },
 
-    'W': function() {
-      showList();
+    showQuiz: function(quiz) {
+      $quiz = $('#multiple-choice');
+      render($quiz, quiz);
     }
-  });
+  };
+
+  var Question = function(theNerds) {
+    this.options = rara.randomSubset(theNerds, 4);
+    this.answer = rara.randomMember(this.options);
+
+    this.check = function(answer) {
+      return answer == this.answer.name;
+    };
+  };
+
+  var Quiz = function(question) {
+    this.run = function() {
+      var $data,
+      newQuestion,
+      output,
+      result;
+
+
+      $('.answer').on("click", function(e) {
+        answer = e.currentTarget.innerHTML;
+        if (question.check(answer)) {
+          result = "Success!";
+        } else {
+          result = "Learn a nerd!";
+        };
+
+        output = "<p id='guess-result'>" + result + "</p><button id='next-question' class='new-quiz'>Try another?</button>";
+        $data = $('#data');
+        $data.html(output);
+
+        $('.new-quiz').on("click", function() {
+          renderNewQuiz();
+        });
+      });
+    }
+  };
 });
