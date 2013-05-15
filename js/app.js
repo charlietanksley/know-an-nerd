@@ -181,15 +181,4 @@ $.domReady(function(){
       });
     }
   };
-
-  // Experiment!
-  $('#home').poke({
-    'E': function() {
-      $('#home').toggleClass('white');
-    },
-
-    'W': function() {
-      showList();
-    }
-  });
 });
