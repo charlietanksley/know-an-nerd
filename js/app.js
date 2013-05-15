@@ -159,9 +159,11 @@ $.domReady(function(){
 
   var Quiz = function(question) {
     this.run = function() {
-      var result,
+      var $data,
       newQuestion,
-      $result;
+      output,
+      result;
+
 
       $('.answer').on("click", function(e) {
         answer = e.currentTarget.innerHTML;
@@ -171,9 +173,9 @@ $.domReady(function(){
           result = "Learn a nerd!";
         };
 
-        $result = $('#guess-result');
-        $result.html(result);
-        $result.append("<button class='new-quiz'>Try again</button>");
+        output = "<p id='guess-result'>" + result + "</p><button id='next-question' class='new-quiz'>Try another?</button>";
+        $data = $('#data');
+        $data.html(output);
 
         $('.new-quiz').on("click", function() {
           renderNewQuiz();
