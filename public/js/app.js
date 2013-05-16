@@ -6,7 +6,12 @@ $.domReady(function(){
   };
 
   $('#show-nerd-list').on("click", function() {
-    nerds = $.cache('nerds').get('all-nerds');
+    allNerds = $.cache('nerds').get('all-nerds');
+    nerds = $.v.reject(allNerds, function(nerd) {
+      if (nerd.id == 'placeholder') {
+        return nerd;
+      };
+    });
     Views.showList();
     makeNerdList();
   });
