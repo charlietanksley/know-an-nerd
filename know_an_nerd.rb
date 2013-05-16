@@ -42,6 +42,7 @@ module Nerds
   end
 
   def self.name_from_image(image)
-    File.basename(image, '.jpg')
+    image_name = File.basename(image)
+    image_name.gsub(/\..+/, '')
   end
 end
