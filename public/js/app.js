@@ -1,18 +1,35 @@
 $.domReady(function(){
   var nerds;
 
-  var render = function(element, data) {
-    $('#data').html(element.render(data));
+  var Views = function() {
+    this.showList = function() {
+      $list = $('#nerd-list');
+      this.render($list, {'nerds':nerds});
+    };
+
+    this.showQuiz = function(quiz) {
+      $quiz = $('#multiple-choice');
+      this.render($quiz, quiz);
+    };
+
+   this.render = function(element, data) {
+     $('#data').html(element.render(data));
+   };
+  };
+
+  var NerdList = function() {
   };
 
   $('#show-nerd-list').on("click", function() {
+    var views = new Views;
+
     allNerds = $.cache('nerds').get('all-nerds');
     nerds = $.v.reject(allNerds, function(nerd) {
       if (nerd.id == 'placeholder') {
         return nerd;
       };
     });
-    Views.showList();
+    views.showList();
     makeNerdList();
   });
 
@@ -48,7 +65,8 @@ $.domReady(function(){
   function renderNewQuiz() {
     var question,
     quiz,
-    quizData;
+    quizData,
+    views;
 
     question = new Question(nerds);
 
@@ -56,22 +74,11 @@ $.domReady(function(){
       'image':question.answer.image,
       'options':question.options};
 
-    Views.showQuiz(quizData);
+    views = new Views;
+    views.showQuiz(quizData);
 
     quiz = new Quiz(question);
     quiz.run();
-  };
-
-  var Views = {
-    showList: function() {
-      $list = $('#nerd-list');
-      render($list, {'nerds':nerds});
-    },
-
-    showQuiz: function(quiz) {
-      $quiz = $('#multiple-choice');
-      render($quiz, quiz);
-    }
   };
 
   var Question = function(theNerds) {
