@@ -21,5 +21,5 @@ function NerdQuiz() {
     return json;
   },
   this.element = $('#quiz');
-  this.nerds = Nerds.allWithPictures()
+  this.nerds = Nerds.unknownNerds();
 };
