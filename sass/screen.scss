@@ -4,6 +4,8 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/utilities/general/clearfix";
+
 /* colorscheme: https://kuler.adobe.com/#create/fromacolor */
 $brown: #4C2B2F;
 $orange: #E57152;
@@ -44,6 +46,12 @@ header {
     font-size: 3.161em;
     text-align: right;
   }
+}
+
+footer {
+  padding-top: 1em;
+  color: $brown;
+  font-size: 3.161em;
 }
 
 nav {
@@ -124,12 +132,12 @@ button.new-quiz {
   }
 
   .guess-this-nerd {
-    width: 48%;
+    width: 50%;
     float: left;
   }
 
   .which-nerd-is-it {
-    width: 48%;
+    width: 50%;
     float: left;
   }
 }
