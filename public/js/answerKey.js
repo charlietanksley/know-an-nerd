@@ -4,8 +4,10 @@ function AnswerKey(question) {
 
   this.evaluate = function(answer) {
     this.status = this.question.check(answer);
+    this.updateCounters();
     this.next();
-  }
+  },
+
   this.next = function() {
     var element,
     output,
@@ -25,5 +27,26 @@ function AnswerKey(question) {
       var nerdQuiz = new NerdQuiz;
       nerdQuiz.presentQuestion();
     });
+  },
+
+  this.updateCounters = function() {
+    if (this.status) {
+      var answerId,
+      that,
+      unknownNerds;
+
+      that = this;
+      unknownNerds = $.v.reject(Nerds.unknownNerds(), function(nerd) {
+        answerId = that.question.answer.id
+        if (nerd.id == answerId) {
+          return nerd;
+        }
+      });
+
+      Nerds.setUnknownNerds(unknownNerds);
+      $('#unknown-nerds').html(unknownNerds.length.toString());
+
+      return this;
+    }
   }
 }

@@ -8,4 +8,6 @@ $.domReady(function(){
     var nerdQuiz = new NerdQuiz;
     nerdQuiz.presentQuestion();
   });
+
+  $('#unknown-nerds').html(Nerds.unknownNerds().length.toString());
 });
