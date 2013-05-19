@@ -44,7 +44,7 @@ function AnswerKey(question) {
       });
 
       Nerds.setUnknownNerds(unknownNerds);
-      $('#unknown-nerds').html(unknownNerds.length.toString());
+      Display.updateUnknownCount();
 
       return this;
     }

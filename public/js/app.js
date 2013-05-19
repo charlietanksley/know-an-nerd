@@ -9,5 +9,5 @@ $.domReady(function(){
     nerdQuiz.presentQuestion();
   });
 
-  $('#unknown-nerds').html(Nerds.unknownNerds().length.toString());
+  Display.updateUnknownCount();
 });
