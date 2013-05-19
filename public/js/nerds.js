@@ -34,6 +34,10 @@ var Nerds = {
     $.cache('nerds').set('unknown-nerds', nerds);
   },
 
+  clearUnknownNerds: function() {
+    $.cache('nerds').set('unknown-nerds', this.allNerds());
+  },
+
   getAllNerds: function() {
     microAjax("api/nerds", function (resp) {
       $.cache('nerds').set('all-nerds', JSON.parse(resp), 86400000);

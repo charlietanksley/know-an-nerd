@@ -117,6 +117,15 @@ button.new-quiz {
   font-size: 5.624em;
 }
 
+#quiz-buttons{
+  padding-top: 0.563em;
+
+  #quiz-reset {
+    font-size: 1em;
+    background: $orange;
+  }
+}
+
 .nerd-quiz {
   button.answer {
     background: $green;

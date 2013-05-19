@@ -10,4 +10,8 @@ $.domReady(function(){
   });
 
   Display.updateUnknownCount();
+  $('#quiz-reset').on("click", function() {
+    Nerds.clearUnknownNerds();
+    Display.updateUnknownCount();
+  });
 });
