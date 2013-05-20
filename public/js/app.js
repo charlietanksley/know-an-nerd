@@ -17,7 +17,7 @@ $.domReady(function(){
     Display.updateUnknownCount();
   });
 
-  $('#filter-list').poke({
+  $('#show-nerd-list').poke({
     'E': function() {
       var nerdList = new NerdList;
       nerdList.showNerdNav();
