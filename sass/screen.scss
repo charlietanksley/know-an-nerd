@@ -126,6 +126,19 @@ button.new-quiz {
   }
 }
 
+
+.filtered-list {
+  background: $brown;
+
+  button.filter-list {
+    background: $brown;
+    color: $white;
+    font-size: 3.161em;
+    width: 100%;
+    border: none;
+  }
+}
+
 .nerd-quiz {
   button.answer {
     background: $green;
