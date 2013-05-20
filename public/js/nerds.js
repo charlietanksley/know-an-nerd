@@ -14,6 +14,17 @@ var Nerds = {
     return nerds;
   },
 
+  named: function(firstName) {
+    var first;
+
+    return $.v.filter(this.allWithPictures(), function(nerd) {
+      first = nerd.name.match(/[\S]*/)[0];
+      if (firstName == first) {
+        return nerd;
+      };
+    });
+  },
+
   allWithPictures: function() {
     var nerds;
     nerds = $.v.reject(this.allNerds(), function(nerd) {
@@ -23,6 +34,23 @@ var Nerds = {
     });
 
     return nerds;
+  },
+
+  uniqueWithPictures: function() {
+    var all,
+    firstNames,
+    firstNamesFinder,
+    nerds;
+
+    all = this.allWithPictures();
+
+    firstNames = $.v.map(all, function(nerd) {
+      return nerd.name.match(/[\S]*/)[0];
+    });
+
+    return $.v.map($.v.uniq(firstNames), function(nerd) {
+      return { 'name':nerd };
+    });
   },
 
   unknownNerds: function() {

@@ -41,6 +41,7 @@
     <section id='templates' class='hidden'>
       <div id='list'>
         <section class='nerd-list'>
+          <button id='filter-list'>Filter</button>
           <ul>
             {:nerds}
               <li>
@@ -48,6 +49,20 @@
                 <p class='nerd'>
                   {name}
                 </p>
+              </li>
+            {/nerds}
+          </ul>
+        </section>
+      </div>
+
+      <div id='filter'>
+        <section class='filtered-list'>
+          <ul>
+            {:nerds}
+              <li>
+                <button  class='filter-list'>
+                  {name}
+                </button>
               </li>
             {/nerds}
           </ul>
