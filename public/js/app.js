@@ -3,10 +3,6 @@ $.domReady(function(){
     var nerdList = new NerdList;
     nerdList.showAllNerds();
 
-    $('#filter-list').on("click", function() {
-      var nerdList = new NerdList;
-      nerdList.showNerdNav();
-    });
   });
 
   $('#show-quiz').on("click", function() {
@@ -21,5 +17,11 @@ $.domReady(function(){
     Display.updateUnknownCount();
   });
 
+  $('#filter-list').poke({
+    'E': function() {
+      var nerdList = new NerdList;
+      nerdList.showNerdNav();
+    }
+  });
 });
 
