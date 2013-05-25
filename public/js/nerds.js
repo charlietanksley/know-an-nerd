@@ -55,7 +55,7 @@ var Nerds = {
 
   unknownNerds: function() {
     return $.cache('nerds').get('unknown-nerds') ||
-      $.cache('nerds').set('unknown-nerds', Nerds.allWithPictures());
+      $.cache('nerds').set('unknown-nerds', this.allWithPictures());
   },
 
   setUnknownNerds: function(nerds) {
