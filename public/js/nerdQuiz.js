@@ -13,7 +13,7 @@ function NerdQuiz() {
 
   this.data = function() {
     var question, json;
-    question = new Question(this.nerds);
+    question = new Question(this.unknownNerds, this.allNerds);
     questions.push(question);
 
     json = { 'image': question.answer.image,
@@ -21,5 +21,6 @@ function NerdQuiz() {
     return json;
   },
   this.element = $('#quiz');
-  this.nerds = Nerds.unknownNerds();
+  this.unknownNerds = Nerds.unknownNerds();
+  this.allNerds = Nerds.allNerds();
 };
