@@ -6,6 +6,7 @@ gem 'nokogiri'
 gem 'sinatra'
 
 group :development, :test do
+  gem "dotenv"
   gem "rspec"
   gem "pry"
 end
