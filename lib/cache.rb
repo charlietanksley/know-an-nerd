@@ -4,11 +4,11 @@ require_relative 'nerd_data'
 class KnowAnNerd
   module Config
     def self.host
-      "127.0.0.1"
+      ENV['REDIS_HOST']
     end
 
     def self.port
-      6379
+      ENV['REDIS_PORT']
     end
   end
 end

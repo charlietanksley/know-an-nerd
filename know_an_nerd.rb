@@ -1,3 +1,8 @@
+if ENV['DEVELOPMENT'] == 'true'
+  require 'dotenv'
+  Dotenv.load
+end
+
 require 'sinatra'
 require 'json'
 require 'lib/cache'
