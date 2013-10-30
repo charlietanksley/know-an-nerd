@@ -2,7 +2,7 @@
 
 <div>
   <ul class="nerd-list">
-    <li class="nerd-list-item" ng-repeat="nerd in nerds">
+    <li class="nerd-list-item" ng-repeat="nerd in nerds | unknownNerds">
       <div class="nerd-list-item-data">
         <p class="nerd-name">{{ nerd.name }}</p>
         <img src='{{nerd.image}}' alt='{{ nerd.name }}'/>
