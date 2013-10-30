@@ -12,7 +12,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     controller: 'NerdsIndexController',
     resolve: {
       nerds: function(NerdListService) {
-        return NerdListService.nerds();
+        return NerdListService.all();
       }
     }
   });

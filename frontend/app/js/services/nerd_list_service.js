@@ -1,9 +1,11 @@
 angular.module("app").service("NerdListService", function($q, $http) {
-  var nerds = function() {
+  var all;
+
+  all = function() {
     return $http.get('/api/nerds');
   };
 
   return {
-    nerds: nerds
+    all: all
   };
 });
