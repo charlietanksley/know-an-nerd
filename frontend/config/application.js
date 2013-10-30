@@ -21,7 +21,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
 
   // we don't use the lineman default concat, handlebars, and jst tasks by default
   removeTasks: {
-    common: ["concat", "handlebars", "jst", "coffee", "less", "jshint"]
+    common: ["concat", "handlebars", "jst", "coffee", "less"]
   },
 
   // task override configuration
