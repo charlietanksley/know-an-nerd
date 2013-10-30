@@ -9,7 +9,12 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
 
   $routeProvider.when('/nerds', {
     templateUrl: 'nerds/index.html',
-    controller: 'NerdIndexController'
+    controller: 'NerdsIndexController',
+    resolve: {
+      nerds: function(NerdListService) {
+        return NerdListService.nerds();
+      }
+    }
   });
 
   $routeProvider.when('/quiz', {
