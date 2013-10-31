@@ -8,7 +8,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
   });
 
   $routeProvider.when('/nerds', {
-    templateUrl: 'nerds/index.html',
+    templateUrl: 'index.html',
     controller: 'NerdsIndexController',
     resolve: {
       nerds: function(NerdListService) {
@@ -17,12 +17,12 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     }
   });
 
-  $routeProvider.when('/quiz', {
-    templateUrl: 'quiz.html',
-    controller: 'QuizController',
+  $routeProvider.when('/nerds/first-name', {
+    templateUrl: 'nerds/index.html',
+    controller: 'SortedByFirstNameController',
     resolve: {
-      BookResource : function(BookService) {
-        return BookService.getBooks();
+      nerds: function(NerdListService) {
+        return NerdListService.all();
       }
     }
     });

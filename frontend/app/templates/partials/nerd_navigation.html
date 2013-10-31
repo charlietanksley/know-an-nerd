@@ -1,0 +1,9 @@
+<nav class="nerd-navigation">
+  <h4>Sort</h4>
+
+  <ul class="navigation">
+    <li class="navigation-element" ng-repeat="filter in filters">
+      <a href="?filter={{ filter.filter }}">{{ filter.name | uppercase }}
+    </li>
+  </ul>
+</nav>
