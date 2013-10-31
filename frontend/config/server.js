@@ -31,7 +31,10 @@ module.exports = {
          name: "Aaron Hillegass"},
         {id: "adam-preble",
          image: "http://www.bignerdranch.com/images/headshots-white-bg/adam-premble.jpg",
-         name: "Adam Preble"}
+         name: "Adam Preble"},
+        {id: "andrew-jones",
+         image: "http://www.bignerdranch.com/images/headshots-white-bg/placeholder.png",
+         name: "Andrew Jones"}
       ]);
     });
   }
