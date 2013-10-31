@@ -7,5 +7,11 @@ extend('KnowAnNerd.Image', {
 
   isPlaceholder: function(nerd) {
     return this.basename(nerd.image) === 'placeholder';
+  },
+
+  onlyPlaceholders: function(nerd) {
+    if (this.isPlaceholder(nerd)) {
+      return nerd;
+    }
   }
 });
