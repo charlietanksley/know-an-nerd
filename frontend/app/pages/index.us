@@ -6,6 +6,7 @@
   </head>
   <body>
     <div id="main" class="row">
+      <know-an-nerd-header></know-an-nerd-header>
       <div id="view" class="large-12" ng-view></div>
     </div>
 
