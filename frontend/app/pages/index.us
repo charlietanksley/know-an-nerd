@@ -5,12 +5,6 @@
     <link rel="stylesheet" type="text/css" href="/css/app.css" media="all" />
   </head>
   <body>
-    <header class="row">
-      <div class="large-12">
-        <h1>Know an Nerd</h1>
-      </div>
-    </header>
-
     <div id="main" class="row">
       <div id="view" class="large-12" ng-view></div>
     </div>
