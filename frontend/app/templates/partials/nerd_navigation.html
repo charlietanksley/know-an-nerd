@@ -1,9 +1,13 @@
-<nav class="nerd-navigation">
-  <h4>Sort</h4>
+<nav class="nerd-navigation row">
+  <div class="large-6 columns search">
+    <p>Search</p>
+  </div>
 
-  <ul class="navigation">
-    <li class="navigation-element" ng-repeat="filter in filters">
-      <a href="?filter={{ filter.filter }}">{{ filter.name | uppercase }}
-    </li>
-  </ul>
+  <div class="large-6 columns filters">
+    <ul>
+      <li class="filter">Photos</li>
+      <li class="filter">Names</li>
+      <li class="filter">Both</li>
+    </ul>
+  </div>
 </nav>
