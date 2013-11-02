@@ -4,7 +4,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
 
   $routeProvider.when('/nerds', {
     templateUrl: 'index.html',
-    controller: 'NerdsIndexController',
+    controller: 'NerdListController',
     resolve: {
       nerds: function(NerdListService) {
         return NerdListService.all();
@@ -14,7 +14,7 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
 
   $routeProvider.when('/nerds/name-only', {
     templateUrl: 'name_only.html',
-    controller: 'NerdNamesController',
+    controller: 'NerdListController',
     resolve: {
       nerds: function(NerdListService) {
         return NerdListService.all();
