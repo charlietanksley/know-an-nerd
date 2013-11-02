@@ -22,5 +22,15 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     }
   });
 
+  $routeProvider.when('/nerds/photo-only', {
+    templateUrl: 'photo_only.html',
+    controller: 'NerdListController',
+    resolve: {
+      nerds: function(NerdListService) {
+        return NerdListService.all();
+      }
+    }
+  });
+
   $routeProvider.otherwise({ redirectTo: '/nerds' });
 });
