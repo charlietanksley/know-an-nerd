@@ -1,8 +1,9 @@
-h1,h2,h3,h4,h5 {
-  text-align: center;
-}
+// This app is going to use a modular scale with an ideal font size of
+// 16px and an 'important number' of 150px (that's how big a photo is)
+// http://modularscale.com/scale/?px1=16&px2=150&ra1=1.5&ra2=0
 
-button {
-  margin-bottom: 0px !important;
-}
+@import 'core/settings';
+@import 'core/base';
+@import 'core/typography';
+@import 'core/layouts';
 

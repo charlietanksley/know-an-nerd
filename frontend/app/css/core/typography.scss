@@ -1,0 +1,30 @@
+p,
+li {
+  color: $black;
+  font-family: $font-stack;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $black-dark;
+  font-family: $font-stack;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.375em;
+  line-height: 1.235em;
+}
+
+h2 {
+  font-size: 2.25em;
+  line-height: 1.235em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.235em;
+}
