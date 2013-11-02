@@ -12,6 +12,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
     pushState: true
   },
 
+  enableSass: true,
+
   // configure lineman to load additional angular related npm tasks
   loadNpmTasks: [
     "grunt-angular-templates",
