@@ -12,5 +12,15 @@ angular.module("app").config(function($routeProvider, $locationProvider) {
     }
   });
 
+  $routeProvider.when('/nerds/name-only', {
+    templateUrl: 'name_only.html',
+    controller: 'NerdNamesController',
+    resolve: {
+      nerds: function(NerdListService) {
+        return NerdListService.all();
+      }
+    }
+  });
+
   $routeProvider.otherwise({ redirectTo: '/nerds' });
 });
