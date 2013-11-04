@@ -1,3 +1,29 @@
 .nerd-navigation {
   border-bottom: 1px solid $black-light;
 }
+
+.search-box {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+::-webkit-input-placeholder {
+  @extend %font-light;
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  @extend %font-light;
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  @extend %font-light;
+  text-align: center;
+}
+
+:-ms-input-placeholder {  
+  @extend %font-light;
+  text-align: center;
+}
