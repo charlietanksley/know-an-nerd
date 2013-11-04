@@ -1,0 +1,8 @@
+.header {
+  @extend %space-below;
+}
+
+.title {
+  text-align: center;
+  color: $black-dark;
+}

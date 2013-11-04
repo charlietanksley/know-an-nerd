@@ -1,17 +1,11 @@
-p,
-li {
+body {
+  @extend %font;
   color: $black;
-  font-family: $font-stack;
-  font-weight: 400;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
+  @extend %font-bold;
   color: $black-dark;
-  font-family: $font-stack;
-  font-weight: 700;
 }
 
 h1 {
