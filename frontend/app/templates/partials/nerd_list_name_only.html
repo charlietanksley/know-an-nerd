@@ -1,6 +1,5 @@
-<ul class="nerd-list-name-only">
-  <li class="nerd-list-item" ng-repeat="nerd in nerds | filter:searchText">
-    <div class="nerd-list-name-only-item-data">
-      <span class="nerd-name">{{ nerd.name }}</span>
+<ul class="nerd-list-name-only nerd-list">
+  <li class="nerd-list-item-name" ng-repeat="nerd in nerds | filter:searchText">
+    {{ nerd.name }}
   </li>
 </ul>
