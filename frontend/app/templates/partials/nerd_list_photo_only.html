@@ -1,7 +1,7 @@
 <ul class="nerd-list-photo-only nerd-list">
   <div class="row" ng-repeat="pair in nerds | filter:searchText">
-    <li class="nerd-list-item-photo columns large-6" ng-repeat="nerd in pair | filter:searchText">
-      <img class="nerd-photo" src='{{nerd.image}}' alt='{{ nerd.name }}'/>
-    </li>
+    <div class="columns large-6" ng-repeat="nerd in pair | filter:searchText">
+      <nerd-photo data-nerd="{{nerd}}"></nerd-photo>
+    </div>
   </div>
 </ul>
