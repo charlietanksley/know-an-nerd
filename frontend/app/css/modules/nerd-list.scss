@@ -8,7 +8,13 @@
   height: 2.778em;
 }
 
-.nerd-list-photo-only-item-data {
-  display: block;
-  margin: 0 auto;
+.nerd-list-item-photo {
+  height: 14.063em;
+  padding: 5% 0;
+
+  .nerd-photo {
+    display: block;
+    margin: 0 auto;
+    padding: 5% 0;
+  }
 }

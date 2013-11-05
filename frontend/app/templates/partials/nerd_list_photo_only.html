@@ -1,6 +1,5 @@
-<ul class="nerd-list-photo-only">
-  <li class="nerd-list-item" ng-repeat="nerd in nerds | filter:searchText">
-    <div class="nerd-list-photo-only-item-data">
-      <img src='{{nerd.image}}' alt='{{ nerd.name }}'/>
+<ul class="nerd-list-photo-only nerd-list">
+  <li class="nerd-list-item-photo" ng-repeat="nerd in nerds | filter:searchText">
+    <img class="nerd-photo" src='{{nerd.image}}' alt='{{ nerd.name }}'/>
   </li>
 </ul>
