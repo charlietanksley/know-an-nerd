@@ -1,5 +1,23 @@
+.nav-list {
+  display: block;
+  li {
+    display: inline;
+    list-style: none;
+    padding-left: 1.5em;
+  }
+}
+
 .nerd-navigation {
   border-bottom: 1px solid $black-light;
+}
+
+.pages {
+  padding: 1.5em 0;
+  text-align: center;
+}
+
+.search {
+  padding-top: 1.5em;
 }
 
 .search-box {
@@ -27,21 +45,3 @@
   @extend %font-light;
   text-align: center;
 }
-
-.filter-list {
-  display: block;
-  li {
-    display: inline;
-    list-style: none;
-    padding-left: 1.5em;
-  }
-}
-
-.search {
-  padding-top: 1.5em;
-}
-
-.filters {
-  padding: 1.5em 0;
-  text-align: center;
-}  
