@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title><%= pkg.name %></title>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/css/app.css" media="all" />
