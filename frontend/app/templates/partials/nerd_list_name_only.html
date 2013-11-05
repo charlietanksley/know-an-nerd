@@ -1,5 +1,7 @@
 <ul class="nerd-list-name-only nerd-list">
-  <li class="nerd-list-item-name" ng-repeat="nerd in nerds | filter:searchText">
-    {{ nerd.name }}
-  </li>
+  <div class="row" ng-repeat="pair in nerds | filter:searchText">
+    <li class="nerd-list-item-name columns large-6" ng-repeat="nerd in pair | filter:searchText">
+      {{ nerd.name }}
+    </li>
+  </div>
 </ul>
