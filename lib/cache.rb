@@ -1,14 +1,23 @@
 require 'redis'
+require 'open-uri'
 require_relative 'nerd_data'
 
 class KnowAnNerd
   module Config
     def self.host
-      ENV['REDIS_HOST']
+      redis_data.host
     end
 
     def self.port
-      ENV['REDIS_PORT']
+      redis_data.port
+    end
+
+    def self.password
+      redis_data.password
+    end
+
+    def self.redis_data
+      URI.parse(ENV['REDIS_URL'])
     end
   end
 end
@@ -48,7 +57,9 @@ class KnowAnNerd
     end
 
     def redis
-      @redis ||= Redis.new(host: KnowAnNerd::Config.host, port: KnowAnNerd::Config.port)
+      @redis ||= Redis.new(host: KnowAnNerd::Config.host,
+        port: KnowAnNerd::Config.port,
+        password: KnowAnNerd::Config.password)
     end
 
     def timestamp
