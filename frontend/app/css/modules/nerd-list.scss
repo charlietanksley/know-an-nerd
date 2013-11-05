@@ -1,0 +1,34 @@
+.nerd-list {
+  list-style-type: none;
+}
+
+.nerd-list-item {
+  padding-top: 1%;
+
+  .nerd-name {
+    font-size: 2.25em;
+    line-height: 1.235em;
+    padding-top: 1.5em;
+    text-align: right;
+  }
+  .nerd-photo {
+    height: 14.063em;
+    padding-left: 0;
+  }
+}
+
+.nerd-list-item-name {
+  font-size: 2.778em;
+  text-align: center;
+  height: 2.778em;
+}
+
+.nerd-list-item-photo {
+  padding: 5% 0;
+
+  .nerd-photo {
+    height: 14.063em;
+    display: block;
+    margin: 0 auto;
+  }
+}

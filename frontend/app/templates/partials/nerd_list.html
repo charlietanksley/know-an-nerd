@@ -1,0 +1,8 @@
+<ul class="nerd-list">
+  <div class="row" ng-repeat="pair in nerds | filter:searchText">
+    <li class="nerd-list-item columns large-6" ng-repeat="nerd in pair | filter:searchText">
+      <p class="nerd-name columns small-6 large-6">{{ nerd.name }}</p>
+      <img class="nerd-photo columns small-6 large-6" src='{{nerd.image}}' alt='{{ nerd.name }}'/>
+    </li>
+  </div>
+</ul>

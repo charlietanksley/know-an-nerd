@@ -4,6 +4,7 @@ ruby '2.0.0'
 gem 'foreman'
 gem 'nokogiri'
 gem 'sinatra'
+gem 'redis'
 
 group :development, :test do
   gem "dotenv"

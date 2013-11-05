@@ -1,0 +1,7 @@
+<ul class="nerd-list-name-only nerd-list">
+  <div class="row" ng-repeat="pair in nerds | filter:searchText">
+    <div class="columns large-6" ng-repeat="nerd in pair | filter:searchText">
+      <nerd-name data-nerd="{{nerd}}"></nerd-name>
+    </div>
+  </div>
+</ul>
