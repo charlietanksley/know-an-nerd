@@ -3,7 +3,6 @@
 }
 
 .nerd-list-item {
-  height: 14.063em;
   padding-top: 1%;
 
   .nerd-name {
@@ -13,6 +12,7 @@
     text-align: right;
   }
   .nerd-photo {
+    height: 14.063em;
     padding-left: 0;
   }
 }
@@ -24,12 +24,11 @@
 }
 
 .nerd-list-item-photo {
-  height: 14.063em;
   padding: 5% 0;
 
   .nerd-photo {
+    height: 14.063em;
     display: block;
     margin: 0 auto;
-    padding: 5% 0;
   }
 }
