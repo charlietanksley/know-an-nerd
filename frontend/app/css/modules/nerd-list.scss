@@ -2,6 +2,21 @@
   list-style-type: none;
 }
 
+.nerd-list-item {
+  height: 14.063em;
+  padding-top: 1%;
+
+  .nerd-name {
+    font-size: 2.25em;
+    line-height: 1.235em;
+    padding-top: 1.5em;
+    text-align: right;
+  }
+  .nerd-photo {
+    padding-left: 0;
+  }
+}
+
 .nerd-list-item-name {
   font-size: 2.778em;
   text-align: center;
