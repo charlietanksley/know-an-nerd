@@ -1,17 +1,15 @@
 listFunctions = {
   pairize: function(list) {
-    var newList = [],
-    pair = [];
+    var newList = [[]];
+
 
     _.each(list, function(item) {
-      if (pair.length === 0) {
-        pair.push(item);
-      } else if (pair.length === 1) {
-        pair.push(item);
-        newList.push(pair);
-        pair = [];
+      var last = _.last(newList);
+
+      if (last.length < 2) {
+        last.push(item);
       } else {
-        throw new Error("Too many");
+        newList.push([item]);
       }
     });
     return newList;
