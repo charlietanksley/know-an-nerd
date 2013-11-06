@@ -28,7 +28,10 @@ module.exports = {
          name: "Adam Preble"},
         {id: "andrew-jones",
          image: "http://www.bignerdranch.com/images/headshots-white-bg/placeholder.png",
-         name: "Andrew Jones"}
+         name: "Andrew Jones"},
+        {id: "agnes-mackintosh",
+         image: "http://www.bignerdranch.com/images/headshots-white-bg/cbq.jpg",
+         name: "Agnes Mackintosh"}
       ]);
     });
   }
