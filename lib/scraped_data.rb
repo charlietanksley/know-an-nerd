@@ -14,13 +14,13 @@ class ScrapedData
 
   class Name
     def self.for(node)
-      node.at_css('.nerd-name').inner_html
+      node.at_css('p.t-bio-name').inner_html
     end
   end
 
   class Image
     def self.for(node)
-      img = node.at_css('.headshot').attribute_nodes.first.inner_text
+      img = node.at_css('img').attribute_nodes.first.inner_text
 
       Config.image_base_path + img
     end
@@ -30,7 +30,7 @@ class ScrapedData
     def self.all
       nodes = Nokogiri::HTML(Config.about_us_page)
 
-      nodes.css('.bio-container')
+      nodes.css('a.l-about-nerd-bio')
     end
   end
 end
